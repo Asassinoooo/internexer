@@ -8,7 +8,7 @@ const PORT = 4000; //Diusahakan jangan menggunakan PORT 3000 karena biasanyasuda
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 mongoose.connect(
-"mongodb+srv://perry:mongodb@cluster0.0oanl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0mongodb.net/test"
+"mongodb+srv://perry:mongodb@cluster0.0oanl.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0"
 );
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
@@ -19,12 +19,11 @@ app.post("/addMahasiswa", async (req, res) => {
 const { name, npm, jurusan } = req.body;
 const user = new User({ name, npm, jurusan });
 try {
-await user.save();
-res
-16
-.status(201)
-.json({ message: "Data Mahasiswa berhasil ditambahkan", data: user });
-} catch (err) {
+    await user.save();
+        res
+        .status(201)
+        .json({ message: "Data Mahasiswa berhasil ditambahkan", data: user });
+    } catch (err) {
 res.status(400).send(err);
 }
 });

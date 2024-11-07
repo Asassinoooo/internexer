@@ -12,6 +12,11 @@ jurusan: {
 type: String,
 required: [true, 'Jurusan is required']
 },
+gaji: {
+type: String,
+required: [true, 'Gaji is required']
+},
 });
 const User = mongoose.model('User', UserSchema);
+
 module.exports = User;
