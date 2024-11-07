@@ -16,8 +16,8 @@ db.once("open", function () {
 console.log("Connected to MongoDB");
 });
 app.post("/addMahasiswa", async (req, res) => {
-const { name, npm, jurusan } = req.body;
-const user = new User({ name, npm, jurusan });
+const { name, npm, jurusan, gaji } = req.body;
+const user = new User({ name, npm, jurusan, gaji });
 try {
     await user.save();
         res
