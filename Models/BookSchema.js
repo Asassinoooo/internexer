@@ -1,22 +1,27 @@
 const mongoose = require('mongoose');
-const UserSchema = new mongoose.Schema({
-name: {
+const BookSchema = new mongoose.Schema({
+title: {
 type: String,
 required: [true, 'Name is required']
 },
-npm: {
+category: {
 type: String,
 required: [true, 'NPM is required']
 },
-jurusan: {
+author: {
 type: String,
 required: [true, 'Jurusan is required']
 },
-gaji: {
+genre: {
 type: String,
 required: [true, 'Gaji is required']
 },
-});
-const User = mongoose.model('User', UserSchema);
 
-module.exports = User;
+price: {
+type: String,
+required: [true, 'Price is required']
+},
+});
+const Buku = mongoose.model('Buku', BookSchema);
+
+module.exports = Buku;
