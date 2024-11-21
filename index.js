@@ -33,7 +33,7 @@ app.delete("/deleteBuku", async (req, res) => {
         await Buku.deleteMany({title: title});
             res
             .status(201)
-            .json({ message: `Data Buku berjudul ${title}berhasil dihapus` });
+            .json({ message: `Data Buku berjudul ${title} berhasil dihapus` });
         } catch (err) {
     res.status(400).send(err);
     }
@@ -49,6 +49,7 @@ app.get("/cariBuku", async (req, res) => {
     res.status(400).send(err);
     }
 });
+
 
 
 app.listen(PORT, () => console.log(`Server started at port: ${PORT}`));
