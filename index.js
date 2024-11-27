@@ -44,7 +44,7 @@ app.get("/cariBuku", async (req, res) => {
         var books = await Buku.find({title: title});
             res
             .status(201)
-            .json({ message: `Ditemukan buku: ${books} ` });
+            .json({ message: `Ditemukan buku: `,books });
         } catch (err) {
     res.status(400).send(err);
     }
